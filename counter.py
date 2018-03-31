@@ -19,12 +19,14 @@ GPIO.output(LED,0)
 curr1 = 0
 timestamp = 0
 pacific = timezone("US/Pacific")
+print "Booted up!"
+
 while True:
     i1=GPIO.input(PIR1)
 
     if i1==0:                 #When output from motion sensor is LOW
         if curr1==1:
-            print "1: No visitors",curr1
+            print "1: No visitors"
             curr1 = 0
 
         GPIO.output(LED,0)
@@ -33,7 +35,7 @@ while True:
 
     elif i1==1:  #When output from motion sensor is HIGH
         if curr1==0:
-            print "1: Visitor detected",curr1
+            print "1: Visitor detected"
             print "time", datetime.now().time()
             print "epochtime", int(time.time())
             timestamp = int(time.time())
