@@ -4,7 +4,7 @@ from datetime import datetime
 from pytz import timezone
 import pytz
 
-pacific = timezone("US/Pacific-New")
+pacific = timezone("US/Pacific")
 
 now = datetime.now(tz=pacific)
 year = now.year
