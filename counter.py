@@ -6,7 +6,7 @@ from datetime import datetime
 PIR1 = 11
 LED = 3
 
-API_ENDPOINT = "
+API_ENDPOINT = "https://api.thingspeak.com/update.json"
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
