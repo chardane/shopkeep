@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import requests
 from datetime import datetime
+from pytz import timezone
 import pytz
 
 PIR1 = 11
@@ -17,6 +18,7 @@ GPIO.output(LED,0)
 
 curr1 = 0
 timestamp = 0
+pacific = timezone("US/Pacific-New")
 while True:
     i1=GPIO.input(PIR1)
 
@@ -35,7 +37,7 @@ while True:
             print "time", datetime.now().time()
             print "epochtime", int(time.time())
             timestamp = int(time.time())
-            now = pytz.utc.localize(datetime.now())
+            now = datetime.now(tz=pacific)
             year = now.year
             month = now.month
             day = now.day
@@ -45,7 +47,6 @@ while True:
             print "day: ", day
             print "month: ", month
             print "year: ", year
-
             # call to thingspeak/shopkeep
             # call to shopkeep
 
