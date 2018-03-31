@@ -39,7 +39,12 @@ while True:
             month = now.month
             day = now.day
             hour = now.hour
-            print now, year, month, day, hour
+            print "now: ", now
+            print "hour: ", hour
+            print "day: ", day
+            print "month: ", month
+            print "year: ", year
+
             # call to thingspeak/shopkeep
             # call to shopkeep
 
