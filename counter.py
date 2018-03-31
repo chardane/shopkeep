@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import requests
 from datetime import datetime
+import pytz
 
 PIR1 = 11
 LED = 3
@@ -34,7 +35,7 @@ while True:
             print "time", datetime.now().time()
             print "epochtime", int(time.time())
             timestamp = int(time.time())
-            now = datetime.now()
+            now = pytz.utc.localize(datetime.now())
             year = now.year
             month = now.month
             day = now.day
